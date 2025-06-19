@@ -2,14 +2,15 @@ import { useState } from "react";
 import "./MyForms.css";
 
 const MyForms = () => {
+  //Gerenciamento de dados  Input
   const [name, setName] = useState();
   const [email, setEmail] = useState();
 
   const handleName = (e) => {
-   setName(e.target.value);
+    setName(e.target.value);
   };
-  console.log(name)
-  
+  console.log(name);
+
   return (
     <div>
       {/* Criação de Forms */}
@@ -26,7 +27,12 @@ const MyForms = () => {
         {/* 2 - label envolvendo input */}
         <label>
           <span>Email:</span>
-          <input type="text" name="email" placeholder="Digite o seu e-mail" />
+          <input
+            type="text"
+            name="email"
+            placeholder="Digite o seu e-mail"
+            onChange={(e) => e.target.value}
+          />
         </label>
         <input type="submit" value="Enviar" />
       </form>
